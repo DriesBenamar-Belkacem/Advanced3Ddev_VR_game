@@ -17,4 +17,12 @@ public class EnemyFollow : MonoBehaviour
     {
         enemy.SetDestination(player.position);
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {           
+            Debug.Log("waar is mijn geld?");
+        }
+
+    }
 }
