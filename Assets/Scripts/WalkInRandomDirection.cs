@@ -10,7 +10,9 @@ public class WalkInRandomDirection : MonoBehaviour
 
     private Transform target;
     private NavMeshAgent agent;
+    public Transform player;
     private float currentTimer;
+    private bool isClose = false;
 
     private void OnEnable()
     {
@@ -21,11 +23,15 @@ public class WalkInRandomDirection : MonoBehaviour
     {
         currentTimer += Time.deltaTime;
 
-        if(currentTimer >= timer)
+        if (currentTimer >= timer && !isClose)
         {
             Vector3 newPosition = RandomNavSphere(transform.position, radius, -1);
             agent.SetDestination(newPosition);
             currentTimer = 0;
+        }
+        if(isClose)
+        {
+            agent.SetDestination(player.position);
         }
     }
     public static Vector3 RandomNavSphere(Vector3 origin, float distance, int layerMask)
@@ -36,5 +42,14 @@ public class WalkInRandomDirection : MonoBehaviour
         NavMeshHit navHit;
         NavMesh.SamplePosition(randomDirection, out navHit, distance, layerMask);
         return navHit.position;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            isClose = true;
+            Debug.Log("You're close watchout");
+        }
+
     }
 }

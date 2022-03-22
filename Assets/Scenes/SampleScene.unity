@@ -2610,8 +2610,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1362745, y: 0.2592822, z: 0.14135627}
-  m_Center: {x: -0.00000087703984, y: 0.128758, z: -0.000001426254}
+  m_Size: {x: 0.905675, y: 0.2592822, z: 1.5278958}
+  m_Center: {x: -0.014746752, y: 0.128758, z: 0.46229446}
 --- !u!114 &736390144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2626,6 +2626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 100
   timer: 3
+  player: {fileID: 268623360}
 --- !u!1 &743274046 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 208ca46f02c94404e9b05c23726cf5e0, type: 3}
