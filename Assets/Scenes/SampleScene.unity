@@ -1283,8 +1283,7 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 895da0c146df0fe4cbf20880a0a81a2f, type: 2}
-    m_RemovedComponents:
-    - {fileID: 2223639932434330405, guid: 020973f4c4bb5424ea1eeb76491f5f96, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 020973f4c4bb5424ea1eeb76491f5f96, type: 3}
 --- !u!1 &238469810
 GameObject:
@@ -2578,20 +2577,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 020973f4c4bb5424ea1eeb76491f5f96, type: 3}
   m_PrefabInstance: {fileID: 196105430}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &736390137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 736390136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd52f28c06d8b984a8849309c996dd3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy: {fileID: 736390138}
-  player: {fileID: 268623360}
 --- !u!195 &736390138
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2627,6 +2612,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1362745, y: 0.2592822, z: 0.14135627}
   m_Center: {x: -0.00000087703984, y: 0.128758, z: -0.000001426254}
+--- !u!114 &736390144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736390136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02ec8e8f11be9a242a88154dfdb7e83a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 100
+  timer: 3
 --- !u!1 &743274046 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 208ca46f02c94404e9b05c23726cf5e0, type: 3}
