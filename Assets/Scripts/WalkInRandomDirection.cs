@@ -27,13 +27,13 @@ public class WalkInRandomDirection : MonoBehaviour
     {
         currentTimer += Time.deltaTime;
 
-        if (currentTimer >= timer && !isClose &&!Transparancy.startGame)
+        if (currentTimer >= timer && !isClose &&Transparancy.startGame)
         {
             Vector3 newPosition = RandomNavSphere(transform.position, radius, -1);
             agent.SetDestination(newPosition);
             currentTimer = 0;
         }
-        if(isClose && !Transparancy.startGame)
+        if(isClose && Transparancy.startGame)
         {
             agent.SetDestination(player.position);
         }
