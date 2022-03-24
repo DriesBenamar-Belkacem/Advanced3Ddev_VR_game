@@ -16,16 +16,17 @@ public class intro : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         count++;
-        if(count >= 10)
+        if(count >= 500)
         {
             pressAnyKey.enabled = true;
+            startGame.timeIsUp = true;
         }
-        if (Input.anyKey)
-        {
-            introText.enabled = false;
-        }
+        //if (Input.anyKey)
+        //{
+        //    introText.enabled = false;
+        //}
     }
 }

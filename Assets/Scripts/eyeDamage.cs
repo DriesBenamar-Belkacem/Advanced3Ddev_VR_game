@@ -14,12 +14,17 @@ public class eyeDamage : MonoBehaviour
     {
         //gameOver.enabled = false;
         gameOver.text = GameOverManager.GetInstance().GameOver;
+        healthText.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthText.text = "eye damage is " + Mathf.Round(Transparancy.count / 5) + "%";
+        if (Transparancy.startGame)
+        {
+            healthText.enabled = true;
+            healthText.text = "eye damage is " + Mathf.Round(Transparancy.count / 5) + "%";
+        }
         if(Transparancy.triggGameOver)
         {
             GameOverManager.GetInstance().GameOverInput("Game over");
