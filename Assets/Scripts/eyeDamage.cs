@@ -19,7 +19,14 @@ public class eyeDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthText.text = "eye damage is " + Mathf.Round(Transparancy.count / 5) + "%";
+        if(Mathf.Round(Transparancy.count / 5)%5==0)
+        {
+            healthText.text = "eye damage is " + Mathf.Round(Transparancy.count / 5) + "%";
+        }
+        else
+        {
+            healthText.text = "";
+        }
         if(Transparancy.triggGameOver)
         {
             GameOverManager.GetInstance().GameOverInput("Game over");

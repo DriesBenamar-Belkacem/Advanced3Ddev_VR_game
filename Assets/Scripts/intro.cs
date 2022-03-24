@@ -18,14 +18,14 @@ public class intro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        count++;
-        if(count >= 10)
-        {
-            pressAnyKey.enabled = true;
-        }
-        if (Input.anyKey)
-        {
-            introText.enabled = false;
-        }
+        //count++;
+        //if(count >= 10)
+        //{
+        //    pressAnyKey.enabled = true;
+        //}
+        //if (Input.anyKey)
+        //{
+        //    introText.enabled = false;
+        //}
     }
 }
