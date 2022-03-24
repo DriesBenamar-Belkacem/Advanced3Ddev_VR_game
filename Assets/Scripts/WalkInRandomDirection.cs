@@ -14,6 +14,10 @@ public class WalkInRandomDirection : MonoBehaviour
     private float currentTimer;
     private bool isClose = false;
 
+    private void Start()
+    {
+        
+    }
     private void OnEnable()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -23,13 +27,13 @@ public class WalkInRandomDirection : MonoBehaviour
     {
         currentTimer += Time.deltaTime;
 
-        if (currentTimer >= timer && !isClose)
+        if (currentTimer >= timer && !isClose &&!Transparancy.startGame)
         {
             Vector3 newPosition = RandomNavSphere(transform.position, radius, -1);
             agent.SetDestination(newPosition);
             currentTimer = 0;
         }
-        if(isClose)
+        if(isClose && !Transparancy.startGame)
         {
             agent.SetDestination(player.position);
         }
