@@ -28,11 +28,17 @@ public class Transparancy : MonoBehaviour
             {
                 color.a += 0.01f;
             }
-            if (color.a >= 1.0f || trigg)
+            if (color.a >= 1.0f)
             {
                 color.a = 0;
                 trigg = false;
                 triggGameOver = true;
+                count = 0;
+            }
+            if(trigg)
+            {
+                color.a = 0;
+                trigg = false;
                 count = 0;
             }
             myMaterial.color = color;
