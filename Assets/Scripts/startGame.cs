@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class startGame : MonoBehaviour //add mesh rendere activation
 {
+    public Transform door;
     public Renderer cubeButton;
     public static bool timeIsUp=false;
     // Start is called before the first frame update
     void Start()
     {
+        door.position = new Vector3(0, 0, 0);
         cubeButton.enabled = false;
     }
 
@@ -25,6 +27,7 @@ public class startGame : MonoBehaviour //add mesh rendere activation
         if (other.tag == "Player")
         {            
             Debug.Log("Game started...");
+            door.position = new Vector3(0, -10, 0);
             Transparancy.startGame = true;
         }
 
