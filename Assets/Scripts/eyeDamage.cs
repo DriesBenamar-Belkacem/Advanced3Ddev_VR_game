@@ -13,7 +13,7 @@ public class eyeDamage : MonoBehaviour
     void Start()
     {
         //gameOver.enabled = false;
-        healthText.enabled = true;
+        //healthText.enabled = true;
         gameOver.text = GameOverManager.GetInstance().GameOver;
         healthText.text = "---";
     }
@@ -27,8 +27,9 @@ public class eyeDamage : MonoBehaviour
             healthText.text = "eye damage is " + Mathf.Round(Transparancy.count / 5) + "%";
             Debug.Log("testing letters");
         }
-        if(Transparancy.triggGameOver)
+        if(Transparancy.triggGameOver||EnemyTrigger.TheyGotYou)
         {
+            healthText.enabled = false;
             GameOverManager.GetInstance().GameOverInput("Game over");
             gameOver.text = GameOverManager.GetInstance().GameOver;
             Debug.Log("test");
