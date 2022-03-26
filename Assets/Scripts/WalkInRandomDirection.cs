@@ -33,6 +33,10 @@ public class WalkInRandomDirection : MonoBehaviour
             agent.SetDestination(newPosition);
             currentTimer = 0;
         }
+        if(!Transparancy.startGame)
+        {
+
+        }
         if(isClose && Transparancy.startGame)
         {
             agent.SetDestination(player.position);
