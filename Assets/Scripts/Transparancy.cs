@@ -8,7 +8,7 @@ public class Transparancy : MonoBehaviour
     public static bool triggGameOver =false;
     public static bool startGame = false;
     //public float timeStart;
-    public Color color;
+    public static Color color;
     public static float count = 0;
     private void Start()
     {
@@ -40,6 +40,10 @@ public class Transparancy : MonoBehaviour
                 color.a = 0;
                 trigg = false;
                 count = 0;
+            }
+            if (docTrigger.gameOver)
+            {
+                color.a = 0;                
             }
             myMaterial.color = color;
         }

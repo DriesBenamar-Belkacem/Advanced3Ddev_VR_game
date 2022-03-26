@@ -7,7 +7,7 @@ public class WalkInRandomDirection : MonoBehaviour
 {
     public float radius;
     public float timer;
-
+    public static bool endGame;
     private Transform target;
     private NavMeshAgent agent;
     public Transform player;
@@ -26,20 +26,19 @@ public class WalkInRandomDirection : MonoBehaviour
     private void Update()
     {
         currentTimer += Time.deltaTime;
+        if (!endGame)
+        {
+            if (currentTimer >= timer && !isClose && Transparancy.startGame)
+            {
+                Vector3 newPosition = RandomNavSphere(transform.position, radius, -1);
+                agent.SetDestination(newPosition);
+                currentTimer = 0;
+            }
 
-        if (currentTimer >= timer && !isClose &&Transparancy.startGame)
-        {
-            Vector3 newPosition = RandomNavSphere(transform.position, radius, -1);
-            agent.SetDestination(newPosition);
-            currentTimer = 0;
-        }
-        if(!Transparancy.startGame)
-        {
-
-        }
-        if(isClose && Transparancy.startGame)
-        {
-            agent.SetDestination(player.position);
+            if (isClose && Transparancy.startGame)
+            {
+                agent.SetDestination(player.position);
+            }
         }
     }
     public static Vector3 RandomNavSphere(Vector3 origin, float distance, int layerMask)

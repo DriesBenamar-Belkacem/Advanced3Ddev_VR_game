@@ -1,16 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine;
+using TMPro;
 public class docTrigger : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI GameIsOverText;
+    public GameObject secretarry;
+    public GameObject lunchlady;
+    public GameObject npcFemale;
+    public GameObject npcMale;
     private Animation doc;
-    private bool isIdle;
+    public static bool gameOver;
    
     void Start()
     {
         doc = gameObject.GetComponent<Animation>();
-        isIdle = true;
+        GameIsOverText.enabled = false;
+        //isIdle = true;
     }
 
     void Update()
@@ -24,9 +31,14 @@ public class docTrigger : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            GameIsOverText.enabled = true;
             Transparancy.startGame = false;
-            Transparancy.trigg = true;
-            //isIdle = false;
+            WalkInRandomDirection.endGame = true;
+            Transparancy.color.a = 0;
+            Debug.Log(Transparancy.color.a);
+            GameObject.Destroy(this.secretarry);
+            GameObject.Destroy(this.lunchlady);
+            gameOver = true;
             Debug.Log("arrived at ehbo");
             doc.Play("Hello");
             
