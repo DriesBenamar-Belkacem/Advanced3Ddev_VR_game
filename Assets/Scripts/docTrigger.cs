@@ -18,15 +18,11 @@ public class docTrigger : MonoBehaviour
     {
         doc = gameObject.GetComponent<Animation>();
         GameIsOverText.enabled = false;
-        //isIdle = true;
     }
 
     void Update()
     {
-        //if(isIdle)
-        //{
-            doc.Play("Idle");
-        //}
+            doc.Play("Idle");      
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -40,16 +36,13 @@ public class docTrigger : MonoBehaviour
             Debug.Log(Transparancy.color.a);
             GameObject.Destroy(this.secretarry);
             GameObject.Destroy(this.lunchlady);
+            GameObject.Destroy(this.npcFemale);
+            GameObject.Destroy(this.npcMale);
             gameOver = true;
             Debug.Log("arrived at ehbo");
             doc.Play("Hello");
             
-        }
-        //else
-        //{
-        //    isIdle = true;
-        //}
-
+        }        
     }
 }
 

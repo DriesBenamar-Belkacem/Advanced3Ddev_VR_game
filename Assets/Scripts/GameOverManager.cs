@@ -6,18 +6,12 @@ public class GameOverManager : MonoBehaviour
 {
     private static GameOverManager instance;
     public static GameOverManager GetInstance() { return instance; }
-    string GameOverText = "";
-    // Start is called before the first frame update
+    string GameOverText = "";    
     void Start()
     {
         instance = this;
         string GameOverText = "";
-    }
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    }    
     public void GameOverInput(string GameIsOver)
     {
         GameOverText = GameIsOver;

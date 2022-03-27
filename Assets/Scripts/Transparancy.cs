@@ -7,7 +7,6 @@ public class Transparancy : MonoBehaviour
     public static bool trigg;
     public static bool triggGameOver =false;
     public static bool startGame = false;
-    //public float timeStart;
     public static Color color;
     public static float count = 0;
     private void Start()
@@ -20,9 +19,7 @@ public class Transparancy : MonoBehaviour
     {
         if (startGame)
         {
-            count += 0.5f;
-            //timeStart += Time.deltaTime;
-            //Debug.Log(Mathf.Round(timeStart));
+            count += 0.5f;            
             color = myMaterial.color;
             if (count % 5 == 0)
             {
@@ -47,11 +44,5 @@ public class Transparancy : MonoBehaviour
             }
             myMaterial.color = color;
         }
-        //Debug.Log(count);
     }
-
-    //IEnumerator waitFS()
-    //{
-    //    yield return new WaitForSeconds(1);
-    //}
 }

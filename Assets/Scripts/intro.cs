@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.XR.Interaction.Toolkit;
 
 
-public class intro : MonoBehaviour//ergens bool toevoegen voor einde intro
+public class intro : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI introText;
     [SerializeField] private TextMeshProUGUI pressAnyKey;
@@ -15,7 +15,6 @@ public class intro : MonoBehaviour//ergens bool toevoegen voor einde intro
     public GameObject secretaryIntro;
     public GameObject docIntro;
     int count = 0;
-    // Start is called before the first frame update
     void Start()
     {
         docIntro.SetActive(false);
@@ -26,15 +25,12 @@ public class intro : MonoBehaviour//ergens bool toevoegen voor einde intro
         pressAnyKey.enabled = true;
         WaterFountain.enabled = false;
     }
-
-    // Update is called once per frame
     void FixedUpdate()
     {
         count++;
         if(count >= 500)//switch loop for intro
         {
             docIntro.SetActive(true);
-            //startGame.timeIsUp = true;
             introText.text = "Quick go to the medic so he can help you restore your vision!";
         }
         if (count >= 1000)
@@ -52,13 +48,5 @@ public class intro : MonoBehaviour//ergens bool toevoegen voor einde intro
             arrow.SetActive(true);
 
         }
-        //if(count>=2000)
-        //{
-
-        //}
-        //if (Input.anyKey)
-        //{
-        //    introText.enabled = false;
-        //}
     }
 }

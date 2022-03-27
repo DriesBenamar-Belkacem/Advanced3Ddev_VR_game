@@ -14,10 +14,6 @@ public class WalkInRandomDirection : MonoBehaviour
     private float currentTimer;
     private bool isClose = false;
 
-    private void Start()
-    {
-        
-    }
     private void OnEnable()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -34,10 +30,9 @@ public class WalkInRandomDirection : MonoBehaviour
                 agent.SetDestination(newPosition);
                 currentTimer = 0;
             }
-
             if (isClose && Transparancy.startGame)
             {
-                agent.SetDestination(player.position);//hier eventueel nog audio
+                agent.SetDestination(player.position);
             }
         }
     }
@@ -57,6 +52,5 @@ public class WalkInRandomDirection : MonoBehaviour
             isClose = true;
             Debug.Log("You're close watchout");
         }
-
     }
 }
