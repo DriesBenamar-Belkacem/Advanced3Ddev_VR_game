@@ -7,6 +7,7 @@ public class triggerTest : MonoBehaviour
     //public bool isClose = false;
     //public bool enemyCollision = false;
     // Start is called before the first frame update
+    public AudioSource waterSound;
     void Start()
     {
         
@@ -21,6 +22,7 @@ public class triggerTest : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            waterSound.Play();
             Transparancy.trigg = true;
             Debug.Log("zone entered");
         }

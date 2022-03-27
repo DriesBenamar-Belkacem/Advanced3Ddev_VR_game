@@ -37,7 +37,7 @@ public class WalkInRandomDirection : MonoBehaviour
 
             if (isClose && Transparancy.startGame)
             {
-                agent.SetDestination(player.position);
+                agent.SetDestination(player.position);//hier eventueel nog audio
             }
         }
     }

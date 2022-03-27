@@ -12,6 +12,7 @@ public class docTrigger : MonoBehaviour
     public GameObject npcMale;
     private Animation doc;
     public static bool gameOver;
+    public AudioSource victorySound;
    
     void Start()
     {
@@ -31,6 +32,7 @@ public class docTrigger : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            victorySound.Play();
             GameIsOverText.enabled = true;
             Transparancy.startGame = false;
             WalkInRandomDirection.endGame = true;

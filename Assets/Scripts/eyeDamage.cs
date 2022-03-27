@@ -9,6 +9,7 @@ public class eyeDamage : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private TextMeshProUGUI healthText;
     [SerializeField] private TextMeshProUGUI gameOver;
+    public AudioSource GameOverSound;
     int count = 0;
     void Start()
     {
@@ -32,7 +33,8 @@ public class eyeDamage : MonoBehaviour
             healthText.enabled = false;
             GameOverManager.GetInstance().GameOverInput("Game over");
             gameOver.text = GameOverManager.GetInstance().GameOver;
-            Debug.Log("test");
+            GameOverSound.Play();
+            //Debug.Log("test");
         }
     }
 }
