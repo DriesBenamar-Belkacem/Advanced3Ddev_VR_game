@@ -5,12 +5,14 @@ public class Transparancy : MonoBehaviour
 {
     [SerializeField] private Material myMaterial;
     public static bool trigg;
-    public static bool triggGameOver =false;
-    public static bool startGame = false;
-    public static Color color;
+    public static bool triggGameOver;
+    public static bool startGame;
+    public Color color;
     public static float count = 0;
     private void Start()
     {
+        triggGameOver = false;
+        startGame = false;
         color = myMaterial.color;
         color.a = 0;
         myMaterial.color = color;

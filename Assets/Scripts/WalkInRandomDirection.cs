@@ -12,8 +12,12 @@ public class WalkInRandomDirection : MonoBehaviour
     private NavMeshAgent agent;
     public Transform player;
     private float currentTimer;
-    private bool isClose = false;
-
+    private bool isClose;
+    public AudioSource CloseSound;
+    private void Start()
+    {
+        isClose = false;
+    }
     private void OnEnable()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -32,6 +36,7 @@ public class WalkInRandomDirection : MonoBehaviour
             }
             if (isClose && Transparancy.startGame)
             {
+                CloseSound.Play();
                 agent.SetDestination(player.position);
             }
         }

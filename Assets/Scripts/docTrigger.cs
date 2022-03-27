@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 public class docTrigger : MonoBehaviour
 {
+    [SerializeField] private Material myMaterialDoc;
     [SerializeField] private TextMeshProUGUI GameIsOverText;
     public GameObject secretarry;
     public GameObject lunchlady;
@@ -13,11 +14,14 @@ public class docTrigger : MonoBehaviour
     private Animation doc;
     public static bool gameOver;
     public AudioSource victorySound;
-   
+    public Color color;
+
     void Start()
     {
         doc = gameObject.GetComponent<Animation>();
         GameIsOverText.enabled = false;
+        color = myMaterialDoc.color;        
+        myMaterialDoc.color = color;
     }
 
     void Update()
@@ -32,8 +36,6 @@ public class docTrigger : MonoBehaviour
             GameIsOverText.enabled = true;
             Transparancy.startGame = false;
             WalkInRandomDirection.endGame = true;
-            Transparancy.color.a = 0;
-            Debug.Log(Transparancy.color.a);
             GameObject.Destroy(this.secretarry);
             GameObject.Destroy(this.lunchlady);
             GameObject.Destroy(this.npcFemale);
@@ -41,7 +43,8 @@ public class docTrigger : MonoBehaviour
             gameOver = true;
             Debug.Log("arrived at ehbo");
             doc.Play("Hello");
-            
+            color.a = 0;
+            myMaterialDoc.color = color;
         }        
     }
 }

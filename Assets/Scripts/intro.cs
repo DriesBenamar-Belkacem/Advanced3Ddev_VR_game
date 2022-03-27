@@ -15,8 +15,10 @@ public class intro : MonoBehaviour
     public GameObject secretaryIntro;
     public GameObject docIntro;
     int count = 0;
+    public static bool introOver;
     void Start()
     {
+        introOver = false;
         docIntro.SetActive(false);
         arrow.SetActive(false);
         secretaryIntro.SetActive(false);
@@ -28,7 +30,7 @@ public class intro : MonoBehaviour
     void FixedUpdate()
     {
         count++;
-        if(count >= 500)//switch loop for intro
+        if(count >= 500)
         {
             docIntro.SetActive(true);
             introText.text = "Quick go to the medic so he can help you restore your vision!";
@@ -46,7 +48,16 @@ public class intro : MonoBehaviour
         {
             WaterFountain.enabled = true;
             arrow.SetActive(true);
-
+        }
+        if(introOver)
+        {
+            docIntro.SetActive(false);
+            arrow.SetActive(false);
+            secretaryIntro.SetActive(false);
+            lunchLadyIntro.SetActive(false);
+            introText.enabled = false;
+            pressAnyKey.enabled = false;
+            WaterFountain.enabled = false;
         }
     }
 }
