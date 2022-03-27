@@ -12,6 +12,14 @@ public class startGame : MonoBehaviour
     {
         timeIsUp = false;
     }
+    private void Update()
+    {
+        if(EnemyTrigger.TheyGotYou)
+        {
+            music.Stop();
+            Transparancy.startGame = false;
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")

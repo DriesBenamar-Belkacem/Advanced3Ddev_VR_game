@@ -1733,6 +1733,38 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 895da0c146df0fe4cbf20880a0a81a2f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 020973f4c4bb5424ea1eeb76491f5f96, type: 3}
+--- !u!1 &196105431 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7036213049465896255, guid: 020973f4c4bb5424ea1eeb76491f5f96, type: 3}
+  m_PrefabInstance: {fileID: 196105430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &196105432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196105431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7a4161f35302b14dba1ad495f5b4e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myMaterialEnemy: {fileID: 2100000, guid: 5aee4dee326dc1a41a18886053209204, type: 2}
+  color: {r: 0, g: 0, b: 0, a: 0}
+--- !u!65 &196105433
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196105431}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.009357712, y: 0.026249923, z: 0.007490793}
+  m_Center: {x: -0.00012367284, y: 0.012733383, z: 0.0007394183}
 --- !u!1 &208154292
 GameObject:
   m_ObjectHideFlags: 0
@@ -2209,7 +2241,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 52
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -4986,7 +5018,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c116f5385aba4ec46a1685ce44d08d0a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5097,6 +5129,7 @@ GameObject:
   - component: {fileID: 1088438551}
   - component: {fileID: 1088438550}
   - component: {fileID: 1088438549}
+  - component: {fileID: 1088438552}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Enemy
@@ -5182,6 +5215,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088438547}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1088438552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088438547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 716b246c387d55b4da218520ad8ddcc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameOverSound: {fileID: 1915122360}
 --- !u!1001 &1093438320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7058,6 +7104,7 @@ GameObject:
   - component: {fileID: 1458821013}
   - component: {fileID: 1458821012}
   - component: {fileID: 1458821011}
+  - component: {fileID: 1458821014}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Enemy
@@ -7143,6 +7190,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1458821009}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1458821014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458821009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 716b246c387d55b4da218520ad8ddcc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameOverSound: {fileID: 1915122360}
 --- !u!1 &1489226489
 GameObject:
   m_ObjectHideFlags: 0
@@ -7347,7 +7407,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 51
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -7494,7 +7554,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 53
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -7672,6 +7732,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7a4161f35302b14dba1ad495f5b4e3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myMaterialEnemy: {fileID: 2100000, guid: 5aee4dee326dc1a41a18886053209204, type: 2}
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!65 &1721042426
 BoxCollider:
   m_ObjectHideFlags: 0
