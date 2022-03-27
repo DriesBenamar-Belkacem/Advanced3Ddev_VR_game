@@ -42,7 +42,7 @@ public class intro : MonoBehaviour
             startGame.timeIsUp = true;
             lunchLadyIntro.SetActive(true);
             secretaryIntro.SetActive(true);
-            introText.text = "Also, watch out for the enemies are somewhere inside the school and dont care if you're injured.";
+            introText.text = "Also, watch out for the enemies they are somewhere inside the school and dont care if you're injured.";
         }
         if (count >= 1500)
         {
